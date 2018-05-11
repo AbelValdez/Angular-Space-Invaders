@@ -16,10 +16,13 @@ export class SpaceScene extends SceneBase {
 
     paint(ctx){
         
-        ctx.drawImage(this.imgBG.nativeElement, this.x, this.y);
+        //ctx.drawImage(this.imgBG.nativeElement, this.x, this.y);
 		// Draw another image at the top edge of the first image
-		ctx.drawImage(this.imgBG.nativeElement, this.x, this.y - this.imgBG.nativeElement.offsetHeight);
-		// If the image scrolled off the screen, reset
+        //ctx.drawImage(this.imgBG.nativeElement, this.x, this.y - this.imgBG.nativeElement.offsetHeight);
+
+        ctx.fillRect(0,0,Screen.GetInstance().WIDTH, Screen.GetInstance().HEIGHT);
+        ctx.stroke();
+        // If the image scrolled off the screen, reset
 		if (this.y >= this.imgBG.nativeElement.offsetHeight)
 			this.y = 0;
 
